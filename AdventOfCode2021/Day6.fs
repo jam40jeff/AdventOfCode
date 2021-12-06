@@ -7,7 +7,7 @@ open type AdventOfCodeInput.Input2021
 let getInput() = Day6 |> split "," |> Seq.map int |> Seq.toList
 
 let processor =
-    let rec processor self daysLeft =
+    let processor self daysLeft =
         if daysLeft < 9 then 1L
         else 1L + ((Seq.init ((daysLeft - 9)/7 + 1) (fun n -> self (daysLeft - 9 - 7*n))) |> Seq.sum)
     Utils.memoizeRec processor
