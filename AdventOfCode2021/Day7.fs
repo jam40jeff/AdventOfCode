@@ -13,8 +13,6 @@ let a() =
     let pos = seq { valueLow; valueHigh } |> Seq.maxBy (fun v -> sortedInput |> Seq.filter ((=) v) |> Seq.length)
     sortedInput |> Seq.map ((-) pos >> abs) |> Seq.sum
 
-type ValueOrResult = Value of int | Result of int
-
 let b() =
     let input = getInput()
     
