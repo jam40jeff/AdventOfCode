@@ -185,6 +185,24 @@ namespace AdventOfCodeInput {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 5723573158
+        ///3154748563
+        ///4783514878
+        ///3848142375
+        ///3637724151
+        ///8583172484
+        ///7747444184
+        ///1613367882
+        ///6228614227
+        ///4732225334.
+        /// </summary>
+        public static string Day11 {
+            get {
+                return ResourceManager.GetString("Day11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to forward 7
         ///down 2
         ///forward 7

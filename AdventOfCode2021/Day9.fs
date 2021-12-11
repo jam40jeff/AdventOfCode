@@ -8,12 +8,12 @@ open type AdventOfCodeInput.Input2021
 
 let init() =
     let input = Day9 |> getPerLine (Seq.map (Char.GetNumericValue >> int)) |> array2D
-    let xMax = (input |> Array2D.length1) - 1
-    let yMax = (input |> Array2D.length2) - 1
+    let maxX = (input |> Array2D.length1) - 1
+    let maxY = (input |> Array2D.length2) - 1
     
     let getAdjacentIndices x y =
         [(x - 1,y);(x + 1,y);(x,y - 1);(x,y + 1)]
-        |> Seq.filter (fun (x,y) -> x >= 0 && y >= 0 && x <= xMax && y <= yMax)
+        |> Seq.filter (fun (x,y) -> x >= 0 && y >= 0 && x <= maxX && y <= maxY)
 
     let isMin x y v = getAdjacentIndices x y |> Seq.forall (fun (x,y) -> v < input[x,y])
     
