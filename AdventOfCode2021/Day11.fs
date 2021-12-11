@@ -16,41 +16,41 @@ let init() =
     
     let step() = grid |> Array2D.iteri (fun x y (n,flashed) -> grid[x,y] <- (if flashed then 1 else n + 1),false)
     
-    let rec scan x y flashes =
-        let applyFlash x y =
-            [-1..1] |> Seq.iter (fun dx -> [-1..1] |> Seq.iter (fun dy ->
-                if dx <> 0 || dy <> 0 then
-                    let x = x + dx
-                    let y = y + dy
-                    if x >= 0 && y >= 0 && x <= maxX && y <= maxY then
-                        let n,flashed = grid[x,y]
-                        grid[x,y] <- n + 1,flashed))
-        
-        let x,y = if x > maxX then 0,y + 1 else x,y
-        if y > maxY then flashes
-        else
-            let n,flashed = grid[x,y]
-            if n > 9 && not flashed then
-                grid[x,y] <- n,true
-                applyFlash x y
-                scan 0 0 (flashes + 1)
-            else scan (x + 1) y flashes
+    let calculateFlashes() =
+        let rec calculateFlashes x y flashes =
+            let applyFlash x y =
+                [-1..1] |> Seq.iter (fun dx -> [-1..1] |> Seq.iter (fun dy ->
+                    if dx <> 0 || dy <> 0 then
+                        let x = x + dx
+                        let y = y + dy
+                        if x >= 0 && y >= 0 && x <= maxX && y <= maxY then
+                            let n,flashed = grid[x,y]
+                            grid[x,y] <- n + 1,flashed))
+            
+            let x,y = if x > maxX then 0,y + 1 else x,y
+            if y > maxY then flashes
+            else
+                let n,flashed = grid[x,y]
+                if n > 9 && not flashed then
+                    grid[x,y] <- n,true
+                    applyFlash x y
+                    calculateFlashes 0 0 (flashes + 1)
+                else calculateFlashes (x + 1) y flashes
+        calculateFlashes 0 0 0
     
-    step,scan
+    step,calculateFlashes
 
 let a() =
-    let step,scan = init()
-    [1..100] |> Seq.sumBy (fun _ -> step(); scan 0 0 0)
+    let step,calculateFlashes = init()
+    [1..100] |> Seq.sumBy (fun _ -> step(); calculateFlashes())
 
 let b() =
-    let step,scan = init()
+    let step,calculateFlashes = init()
     
-    Seq.initInfinite id
+    Seq.initInfinite ((+) 1)
     |> Seq.choose
         (fun n ->
-            let flashed = scan 0 0 0
-            if flashed = 100 then Some n
-            else
-                step()
-                None)
+            step()
+            let flashes = calculateFlashes()
+            if flashes = 100 then Some n else None)
     |> Seq.head
