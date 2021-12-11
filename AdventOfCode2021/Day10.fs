@@ -27,7 +27,7 @@ let a() =
                     match c with
                     | c when isClose c ->
                         let isIllegal,stack = isIllegal stack c
-                        [],if isIllegal then Some c else None
+                        if isIllegal then [],Some c else stack,None
                     | c when isOpen c -> ((c::stack),None)
                     | c -> failwith $"Unexpected character: %c{c}")
                 ([],None)
