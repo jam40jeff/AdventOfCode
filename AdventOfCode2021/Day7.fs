@@ -1,5 +1,6 @@
 module AdventOfCode2021.Code.Day7
 
+open Checked
 open AdventOfCodeCommon.InputUtils
 open type AdventOfCodeInput.Input2021
 

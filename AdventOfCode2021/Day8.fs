@@ -1,20 +1,8 @@
 module AdventOfCode2021.Code.Day8
 
+open Checked
 open AdventOfCodeCommon.InputUtils
 open type AdventOfCodeInput.Input2021
-
-let nums = [
-    Set.ofList ['a';'b';'c';'e';'f';'g']
-    Set.ofList ['c';'f']
-    Set.ofList ['a';'c';'d';'e';'g']
-    Set.ofList ['a';'c';'d';'f';'g']
-    Set.ofList ['b';'c';'d';'f']
-    Set.ofList ['a';'b';'d';'f';'g']
-    Set.ofList ['a';'b';'d';'e';'f';'g']
-    Set.ofList ['a';'c';'f']
-    Set.ofList ['a';'b';'c';'d';'e';'f';'g']
-    Set.ofList ['a';'b';'c';'d';'f';'g']
-]
 
 type UniqueDigits = UniqueDigits of char Set list
     with

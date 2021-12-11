@@ -1,5 +1,6 @@
 module AdventOfCode2021.Code.Day2
 
+open Checked
 open System.Text.RegularExpressions
 open AdventOfCodeCommon.InputUtils
 open type AdventOfCodeInput.Input2021

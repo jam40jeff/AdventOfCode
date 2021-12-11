@@ -172,6 +172,19 @@ namespace AdventOfCodeInput {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to (({({({(({{&lt;{{()&lt;&gt;}}&gt;}}([&lt;[(&lt;&gt;{})(()()))[[{}[]]{&lt;&gt;{}}]&gt;(&lt;(&lt;&gt;[])&lt;[]()&gt;&gt;&lt;[{}[]]([]&lt;&gt;)&gt;)]{{({{}[]}{{}{}})}})
+        ///[{(&lt;(&lt;&lt;([[[{(([]{})&lt;(){}&gt;)&lt;{&lt;&gt;}(()[])&gt;}]]{[([(()[])[[][]]]&lt;((){})((){})&gt;)({{{}[]}&lt;{}&gt;})]}]){{[[&lt;&lt;{&lt;&gt;}(&lt;
+        ///((&lt;[([(({&lt;&lt;&lt;{{&lt;&gt;&lt;&gt;}({}&lt;&gt;)}{{&lt;&gt;{}}[[]()]}&gt;&gt;([&lt;[{}{}]&gt;{[()&lt;&gt;]&lt;&lt;&gt;()&gt;}]&lt;(&lt;{}()&gt;&lt;[]{}&gt;)&lt;&lt;[]&lt;&gt;&gt;}&gt;)&gt;}[&lt;{&lt;([&lt;&gt;&lt;&gt;]&lt;
+        ///[&lt;[&lt;({{({{[({[[][]]&lt;{}&lt;&gt;&gt;})&lt;[&lt;{}{}&gt;]([&lt;&gt;&lt;&gt;](&lt;&gt;{}))&gt;]{[{[[]{}}{{}{}}}&lt;(&lt;&gt;&lt;&gt;)({})&gt;]{({()()}[&lt;&gt;()])
+        ///[&lt;{&lt;&lt;({[{{{(&lt;({}()){{}[]}&gt;&lt;(&lt;&gt;&lt;&gt;)[[]{}]&gt;)}&lt;(([{}{}]{&lt;&gt;[]}))&lt;(&lt;&lt;&gt;[]&gt;){&lt;[]&gt;(&lt;&gt;{})}&gt;&gt;}({{((&lt;&gt;())&lt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Day10 {
+            get {
+                return ResourceManager.GetString("Day10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to forward 7
         ///down 2
         ///forward 7
@@ -374,6 +387,20 @@ namespace AdventOfCodeInput {
         public static string Day8 {
             get {
                 return ResourceManager.GetString("Day8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8656456789432129876532356789899998754320146789767893213468953205459323997678901997655423567797655667
+        ///6545345996543234987321567896798749886531235697657999304989764312378999886567899876543212345679543156
+        ///5431239879694349876432398945976532997782356789547898919898765434567988765456789997654323456789654345
+        ///6520139768989556987543499239854321098993768996536587998789876597679876544245690198965654567899875456
+        ///7631297657679697998756789349765432129654879797627456789678997698789997432136789999876765698969987887
+        ///97 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Day9 {
+            get {
+                return ResourceManager.GetString("Day9", resourceCulture);
             }
         }
     }
