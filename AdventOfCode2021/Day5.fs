@@ -42,4 +42,5 @@ let run getLinePoints =
     values |> countOverlaps
 
 let a() = run getLinePoints
+
 let b() = run getLinePointsWithDiagonals
