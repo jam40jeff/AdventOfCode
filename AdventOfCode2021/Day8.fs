@@ -59,14 +59,13 @@ let a() =
         let stringLengths = [2;3;4;7]
         stringLengths |> List.contains c.Count
     
-    getInput() |> Seq.map (fun (_, outputDigits) -> outputDigits.Values |> Seq.filter is1or4or7or8 |> Seq.length) |> Seq.sum
+    getInput() |> Seq.sumBy (fun (_, outputDigits) -> outputDigits.Values |> Seq.filter is1or4or7or8 |> Seq.length)
 
 let b() =
     getInput()
-    |> Seq.map
+    |> Seq.sumBy
         (fun (uniqueDigits, outputDigits) ->
             let mapping = uniqueDigits.getMapping()
             let outputDigitValues = outputDigits.Values
             let len = outputDigitValues.Length
             outputDigitValues |> Seq.mapi (fun i v -> pown 10 (len - i - 1) * (mapping |> Map.find v)) |> Seq.sum)
-    |> Seq.sum
