@@ -36,6 +36,7 @@ let init() =
                     applyFlash x y
                     calculateFlashes 0 0 (flashes + 1)
                 else calculateFlashes (x + 1) y flashes
+        
         calculateFlashes 0 0 0
     
     step,calculateFlashes
