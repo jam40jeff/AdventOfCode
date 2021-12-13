@@ -203,6 +203,34 @@ namespace AdventOfCodeInput {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to VJ-nx
+        ///start-sv
+        ///nx-UL
+        ///FN-nx
+        ///FN-zl
+        ///end-VJ
+        ///sv-hi
+        ///em-VJ
+        ///start-hi
+        ///sv-em
+        ///end-zl
+        ///zl-em
+        ///hi-VJ
+        ///FN-em
+        ///start-VJ
+        ///jx-FN
+        ///zl-sv
+        ///FN-sv
+        ///FN-hi
+        ///nx-end.
+        /// </summary>
+        public static string Day12 {
+            get {
+                return ResourceManager.GetString("Day12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to forward 7
         ///down 2
         ///forward 7
