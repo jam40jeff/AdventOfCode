@@ -19,12 +19,6 @@ let getLinePointsWithDiagonals ((x1,y1),(x2,y2)) =
     else Seq.zip [x1..(getStep x1 x2)..x2] [y1..(getStep y1 y2)..y2]
 
 let run getLinePoints =
-    let increment (values : _[,]) (x,y) = values[x,y] <- values[x,y] + 1
-
-    let countOverlaps values =
-        let isOverlap v = v > 1
-        values |> Utils.flattenArray2D |> Seq.filter isOverlap |> Seq.length
-    
     let vents =
         Day5
         |> getPerLine (fun l ->
@@ -38,8 +32,11 @@ let run getLinePoints =
         let maxY = vents |> Seq.map (fun ((_,y1),(_,y2)) -> max y1 y2) |> Seq.max
         Array2D.create (maxX + 1) (maxY + 1) 0
     
-    vents |> Seq.iter (getLinePoints >> Seq.iter (increment values))
-    values |> countOverlaps
+    let increment (x,y) = values[x,y] <- values[x,y] + 1
+    vents |> Seq.iter (getLinePoints >> Seq.iter increment)
+    
+    let isOverlap v = v > 1
+    values |> Utils.flattenArray2D |> Seq.filter isOverlap |> Seq.length
 
 let a() = run getLinePoints
 
