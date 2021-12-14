@@ -13,3 +13,6 @@ let splitLines (s : string) = s |> split newLine
 let getPerLine f (s : string) = s |> splitLines |> Array.map f
 let getIntPerLine (s : string) = s |> getPerLine int
 let getStringPerLine (s : string) = s |> splitLines
+
+let substring startIndex length (s : string) = s.Substring(startIndex, length)
+let substringToEnd startIndex (s : string) = s.Substring startIndex
