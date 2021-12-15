@@ -10,7 +10,7 @@ let run includeDiagonals =
         let points = s |> split " -> " |> Array.map (fun p -> p |> split "," |> Array.map int)
         match points with
         | [|[|x1;y1|];[|x2;y2|]|] -> (x1,y1),(x2,y2)
-        | _ -> failwith $"Invalid format for line: %s{l}"
+        | _ -> failwith $"Invalid format for line: %s{s}"
     
     let vents = Day5 |> getPerLine getPoints
     

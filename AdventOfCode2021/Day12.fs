@@ -3,6 +3,7 @@ module AdventOfCode2021.Code.Day12
 open System
 open Checked
 open AdventOfCodeCommon.InputUtils
+open AdventOfCodeCommon.Utils
 open type AdventOfCodeInput.Input2021
 
 type Cave = Start | Small of string | Large of string | End
@@ -23,7 +24,6 @@ let parseLine (line : string) =
     | _ -> failwith $"Invalid input: %s{line}"
 
 let notStart = function Start -> false | _ -> true
-let groupTuples t = t |> Seq.groupBy fst |> Seq.map (fun (key,values) -> key,values |> Seq.map snd |> Seq.toList)
 
 let a() =
     let caves = Day12 |> getPerLine parseLine |> Seq.collect id |> Seq.distinct |> groupTuples |> Map.ofSeq

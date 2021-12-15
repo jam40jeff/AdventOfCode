@@ -296,6 +296,71 @@ namespace AdventOfCodeInput {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SCVHKHVSHPVCNBKBPVHV
+        ///
+        ///SB -&gt; B
+        ///HH -&gt; P
+        ///VF -&gt; N
+        ///BS -&gt; S
+        ///NC -&gt; C
+        ///BF -&gt; H
+        ///BN -&gt; H
+        ///SP -&gt; H
+        ///BK -&gt; H
+        ///FF -&gt; N
+        ///VN -&gt; B
+        ///FN -&gt; C
+        ///FS -&gt; S
+        ///PP -&gt; F
+        ///ON -&gt; H
+        ///FV -&gt; F
+        ///KO -&gt; F
+        ///PK -&gt; H
+        ///VB -&gt; S
+        ///HS -&gt; B
+        ///NV -&gt; O
+        ///PN -&gt; S
+        ///VH -&gt; B
+        ///OS -&gt; P
+        ///BP -&gt; H
+        ///OV -&gt; B
+        ///HK -&gt; S
+        ///NN -&gt; K
+        ///SV -&gt; C
+        ///PB -&gt; F
+        ///SK -&gt; F
+        ///FB -&gt; S
+        ///NB -&gt; K
+        ///HF -&gt; P
+        ///FK -&gt; K
+        ///KV -&gt; P
+        ///PV -&gt; F
+        ///BC -&gt; S
+        ///FO -&gt; N
+        ///HC -&gt; F
+        ///CP -&gt; B
+        ///KK -&gt; F
+        ///PC -&gt; S
+        ///HN -&gt; O
+        ///SH -&gt; H
+        ///CK -&gt; P
+        ///CO -&gt; F
+        ///HP -&gt; K
+        ///PS -&gt; C
+        ///KP -&gt; F
+        ///OF -&gt; K
+        ///KS -&gt; F
+        ///NO -&gt; V
+        ///CB -&gt; K
+        ///NF [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Day14 {
+            get {
+                return ResourceManager.GetString("Day14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to forward 7
         ///down 2
         ///forward 7

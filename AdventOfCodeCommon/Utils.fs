@@ -1,7 +1,7 @@
 module AdventOfCodeCommon.Utils
 
+open Checked
 open System.Collections.Concurrent
-open System.Collections.Generic
 
 let rec combinations size set =
     let rec combinations acc size set = seq {
@@ -37,3 +37,6 @@ let flattenArray2D a =
             for y in [0..(Array2D.length2 a) - 1] do 
                 yield a[x,y]
     }
+
+let groupTuplesAndMap f t = t |> Seq.groupBy fst |> Seq.map (fun (key,values) -> key,values |> Seq.map snd |> f)
+let groupTuples t = groupTuplesAndMap Seq.toList t
