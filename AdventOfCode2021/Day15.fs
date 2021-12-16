@@ -22,23 +22,24 @@ let run input =
                     let value = input[x,y] + if x > 0 then (if y > 0 then min scores[x-1,y] scores[x,y-1] else scores[x-1,y]) else scores[x,y-1]
                     if value < scores[x,y] then scores[x,y] <- value
         
-        let upMoves = List<(int*int)*int>()
+        let moves = Dictionary<int*int,int>()
         for x = 0 to maxX do
             for y = 1 to maxY do
                 let diff = scores[x,y] + input[x,y-1] - scores[x,y-1]
-                if diff < 0 then upMoves.Add((x,y-1),diff)
+                if diff < 0 then moves.Add((x,y-1),diff)
         
-        let leftMoves = List<(int*int)*int>()
-        if upMoves.Count < 1 then
-            for x = 1 to maxX do
-                for y = 0 to maxY do
-                    let diff = scores[x,y] + input[x-1,y] - scores[x-1,y]
-                    if diff < 0 then upMoves.Add((x-1,y),diff)
+        for x = 1 to maxX do
+            for y = 0 to maxY do
+                let diff = scores[x,y] + input[x-1,y] - scores[x-1,y]
+                if diff < 0 then
+                    let found,diff' = moves.TryGetValue((x,y))
+                    if not found || diff' > diff then moves[(x-1,y)] <- diff
         
-        if upMoves.Count > 0 || leftMoves.Count > 0 then
+        if moves.Count > 0 then
             
-            for (x,y),diff in upMoves do scores[x,y] <- scores[x,y] + diff
-            for (x,y),diff in leftMoves do scores[x,y] <- scores[x,y] + diff
+            for p in moves do
+                let x,y = p.Key
+                scores[x,y] <- scores[x,y] + p.Value
             
             scan()
     
