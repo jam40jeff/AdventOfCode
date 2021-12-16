@@ -1,5 +1,6 @@
 module AdventOfCodeCommon.Utils
 
+open System
 open Checked
 open System.Collections.Concurrent
 
