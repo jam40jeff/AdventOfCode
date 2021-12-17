@@ -384,6 +384,15 @@ namespace AdventOfCodeInput {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to target area: x=175..227, y=-134..-79.
+        /// </summary>
+        public static string Day17 {
+            get {
+                return ResourceManager.GetString("Day17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to forward 7
         ///down 2
         ///forward 7
