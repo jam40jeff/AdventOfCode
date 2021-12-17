@@ -23,6 +23,7 @@ let run input =
                     if value < scores[x,y] then scores[x,y] <- value
         
         let moves = Dictionary<int*int,int>()
+        
         for x = 0 to maxX do
             for y = 1 to maxY do
                 let diff = scores[x,y] + input[x,y-1] - scores[x,y-1]
