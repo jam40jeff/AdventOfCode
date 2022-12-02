@@ -17,7 +17,7 @@ type Fold = AlongX of int | AlongY of int
             else failwith $"Invalid fold: %s{s}"
 
 let init() =
-    let inputs = Day13 |> split $"%s{newLine}%s{newLine}"
+    let inputs = Day13 |> splitOnBlankLines
     let points,folds =
         match inputs with
         | [|points;folds|] ->

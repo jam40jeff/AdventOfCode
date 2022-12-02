@@ -9,6 +9,13 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AdventOfCode2021", "AdventO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCodeInput", "AdventOfCodeInput\AdventOfCodeInput.csproj", "{949E5B03-1FC3-4274-8CC6-CC44382E0864}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{EF085D40-999A-4961-AA81-3FD80307AA19}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode2022", "AdventOfCode2022\AdventOfCode2022.fsproj", "{76438099-8237-4BC5-8C8F-7EB00FDF42C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{949E5B03-1FC3-4274-8CC6-CC44382E0864}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{949E5B03-1FC3-4274-8CC6-CC44382E0864}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{949E5B03-1FC3-4274-8CC6-CC44382E0864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76438099-8237-4BC5-8C8F-7EB00FDF42C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76438099-8237-4BC5-8C8F-7EB00FDF42C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76438099-8237-4BC5-8C8F-7EB00FDF42C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76438099-8237-4BC5-8C8F-7EB00FDF42C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

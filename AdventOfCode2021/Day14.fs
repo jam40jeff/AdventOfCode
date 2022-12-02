@@ -6,7 +6,7 @@ open AdventOfCodeCommon.Utils
 open type AdventOfCodeInput.Input2021
 
 let init() =
-    let groups = Day14 |> split $"%s{newLine}%s{newLine}" |> Seq.map getStringPerLine |> Seq.toList
+    let groups = Day14 |> splitOnBlankLines |> Seq.map getStringPerLine |> Seq.toList
     let template,rules =
         match groups with
         | [[|template|];rules] -> template,rules

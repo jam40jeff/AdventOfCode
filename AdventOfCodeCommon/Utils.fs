@@ -1,6 +1,5 @@
 module AdventOfCodeCommon.Utils
 
-open System
 open Checked
 open System.Collections.Concurrent
 
@@ -41,3 +40,19 @@ let flattenArray2D a =
 
 let groupTuplesAndMap f t = t |> Seq.groupBy fst |> Seq.map (fun (key,values) -> key,values |> Seq.map snd |> f)
 let groupTuples t = groupTuplesAndMap Seq.toList t
+
+let private tryMinOrMaxBy c f s =
+    s
+    |> Seq.fold
+        (fun prev cur ->
+            let curC = f cur
+            match prev with
+            | None -> Some (cur,curC)
+            | Some (prev,prevC) -> Some (if c curC prevC then (cur,curC) else (prev,prevC)))
+        None
+    |> Option.map fst
+
+let tryMinBy f s = s |> tryMinOrMaxBy (<) f
+let tryMin s = s |> tryMinBy id
+let tryMaxBy f s = s |> tryMinOrMaxBy (>) f
+let tryMax s = s |> tryMaxBy id

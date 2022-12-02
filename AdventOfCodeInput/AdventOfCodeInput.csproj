@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -12,12 +12,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Input2021.resx</DependentUpon>
     </Compile>
+    <Compile Update="Input2022.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Input2022.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Input2021.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Input2021.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Input2022.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Input2022.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
