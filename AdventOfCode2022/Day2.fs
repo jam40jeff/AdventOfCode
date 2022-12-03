@@ -18,6 +18,7 @@ let private readOther = function 'A' -> Rock | 'B' -> Paper | 'C' -> Scissors | 
 
 let a() =
     let readMine = function 'X' -> Rock | 'Y' -> Paper | 'Z' -> Scissors | s -> failwith $"Invalid input: {s}"
+    
     Day2
     |> getPerLine (fun line ->
         let other = readOther line[0]
@@ -31,6 +32,7 @@ let b() =
         | 'Y' -> match other with Rock -> Rock | Paper -> Paper | Scissors -> Scissors
         | 'Z' -> match other with Rock -> Paper | Paper -> Scissors | Scissors -> Rock
         | s -> failwith $"Invalid input: {s}"
+    
     Day2
     |> getPerLine (fun line ->
         let other = readOther line[0]
