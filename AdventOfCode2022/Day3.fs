@@ -19,14 +19,16 @@ let a () =
     |> Seq.sum
 
 let b () =
-    let aggregateSets p c = match p with | None -> Some c | Some p -> p |> Set.intersect c |> Some
+    let intersect sets =
+        let aggregateSets p c = match p with | None -> Some c | Some p -> p |> Set.intersect c |> Some
+        sets |> Seq.fold aggregateSets None
 
     Day3
     |> getStringPerLine
     |> Seq.chunkBySize 3
     |> Seq.map (
         Seq.map Set.ofSeq
-        >> Seq.fold aggregateSets None
+        >> intersect
         >> Option.bind (Set.toSeq >> Seq.tryExactlyOne)
         >> Option.defaultWith (fun () -> failwith "Could not find common item in group.")
         >> priority)
