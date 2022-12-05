@@ -7,9 +7,9 @@ open Checked
 open AdventOfCodeCommon.InputUtils
 open type AdventOfCodeInput.Input2022
 
-let regex = Regex(@"move ([0-9]+) from ([0-9]+) to ([0-9]+)")
+let private regex = Regex(@"move ([0-9]+) from ([0-9]+) to ([0-9]+)")
 
-type Instruction = { Quantity : int; From : int; To : int }
+type private Instruction = { Quantity : int; From : int; To : int }
 
 let private parseInput() =
     let parseStacks (s : string) =

@@ -4,9 +4,9 @@ open Checked
 open AdventOfCodeCommon.InputUtils
 open type AdventOfCodeInput.Input2022
 
-type Range = { Min : int; Max : int }
+type private Range = { Min : int; Max : int }
 
-let parseLine (line : string) =
+let private parseLine (line : string) =
     let parseRange (s : string) =
         let parts = s.Split('-')
         { Min = int parts[0]; Max = int parts[1] }
