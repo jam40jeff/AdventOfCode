@@ -56,3 +56,9 @@ let tryMinBy f s = s |> tryMinOrMaxBy (<) f
 let tryMin s = s |> tryMinBy id
 let tryMaxBy f s = s |> tryMinOrMaxBy (>) f
 let tryMax s = s |> tryMaxBy id
+
+let takeWhileInclusive f s =
+    seq { yield (true, Unchecked.defaultof<'a>); yield! (s |> Seq.map (fun v -> (f v, v))) }
+    |> Seq.pairwise
+    |> Seq.takeWhile (fst >> fst)
+    |> Seq.map (snd >> snd)
