@@ -18,6 +18,10 @@ open AdventOfCodeCommon
     ((D7, B), Day7.b >> string)
     ((D8, A), Day8.a >> string)
     ((D8, B), Day8.b >> string)
+    ((D9, A), Day9.a >> string)
+    ((D9, B), Day9.b >> string)
+    ((D10, A), Day10.a >> string)
+    ((D10, B), Day10.b >> string)
 ]
 |> Map.ofList
 |> Program.execute
