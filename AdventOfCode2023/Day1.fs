@@ -15,6 +15,7 @@ let a() =
 
 let b() =
     let regexString = "1|one|2|two|3|three|4|four|5|five|6|six|7|seven|8|eight|9|nine"
+    
     let getNum = function
         | "1" | "one" -> 1
         | "2" | "two" -> 2
@@ -26,6 +27,7 @@ let b() =
         | "8" | "eight" -> 8
         | "9" | "nine" -> 9
         | s -> failwith $"Unknown number string encountered: %s{s}"
+    
     Day1
     |> getPerLine (fun s ->
         let firstMatch = Regex.Match(s, regexString)
