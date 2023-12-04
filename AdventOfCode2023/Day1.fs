@@ -28,7 +28,7 @@ let b() =
         | s -> failwith $"Unknown number string encountered: %s{s}"
     Day1
     |> getPerLine (fun s ->
-        let match1 = Regex.Match(s, regexString)
-        let match2 = Regex.Match(s, regexString, RegexOptions.RightToLeft)
-        if match1.Success && match2.Success then (getNum match1.Groups[0].Value) * 10 + (getNum match2.Groups[0].Value) else 0)
+        let firstMatch = Regex.Match(s, regexString)
+        let lastMatch = Regex.Match(s, regexString, RegexOptions.RightToLeft)
+        if firstMatch.Success && lastMatch.Success then (getNum firstMatch.Groups[0].Value) * 10 + (getNum lastMatch.Groups[0].Value) else 0)
     |> Seq.sum
