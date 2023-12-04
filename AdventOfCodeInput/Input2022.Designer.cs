@@ -233,6 +233,49 @@ namespace AdventOfCodeInput {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monkey 0:
+        ///  Starting items: 91, 58, 52, 69, 95, 54
+        ///  Operation: new = old * 13
+        ///  Test: divisible by 7
+        ///    If true: throw to monkey 1
+        ///    If false: throw to monkey 5
+        ///
+        ///Monkey 1:
+        ///  Starting items: 80, 80, 97, 84
+        ///  Operation: new = old * old
+        ///  Test: divisible by 3
+        ///    If true: throw to monkey 3
+        ///    If false: throw to monkey 5
+        ///
+        ///Monkey 2:
+        ///  Starting items: 86, 92, 71
+        ///  Operation: new = old + 7
+        ///  Test: divisible by 2
+        ///    If true: throw to monkey 0
+        ///    If false: throw to monkey 4
+        ///
+        ///Monkey 3:
+        ///   [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Day11 {
+            get {
+                return ResourceManager.GetString("Day11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to abccccaaacaccccaaaaacccccccaaccccccccaaaaaaccccccaaaaaccccccccccaaaaaaaaacccccccaaaaaaaaaaaaaaccaaaaaccccccccccccaccacccccccccccccccccccccccccccccccccccccccaaaaaa
+        ///abccaacaaaaaccaaaaacccccaaaaaccccccccaaaaaaccccccaaaaaacccccccccaaaaaaaaaaaaacccaaaaaaaaaaaaaaaaaaaaaccccccccccccaaaacccccccccccccccccccccccccccccccccccccccaaaaaa
+        ///abccaaaaaaaaccaaaaaacccccaaaaaccccccaaaaaaaacccccaaaaaaccccccccccaaaaaaaaaaaacccaaaaaacaaaaaacaaaaaaaaccccccccccaaaaacccccaccccccccccccccccccaaacccccccccccccaaaaa
+        ///abcccaaaaaccccccaaaa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Day12 {
+            get {
+                return ResourceManager.GetString("Day12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to C Z
         ///C Z
         ///A Y

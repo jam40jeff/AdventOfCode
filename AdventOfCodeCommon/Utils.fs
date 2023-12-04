@@ -38,6 +38,13 @@ let flattenArray2D a =
                 yield a[x,y]
     }
 
+let flattenArray2Di a = 
+    seq {
+        for x in [0..(Array2D.length1 a) - 1] do 
+            for y in [0..(Array2D.length2 a) - 1] do 
+                yield (x,y,a[x,y])
+    }
+
 let groupTuplesAndMap f t = t |> Seq.groupBy fst |> Seq.map (fun (key,values) -> key,values |> Seq.map snd |> f)
 let groupTuples t = groupTuplesAndMap Seq.toList t
 
@@ -62,3 +69,14 @@ let takeWhileInclusive f s =
     |> Seq.pairwise
     |> Seq.takeWhile (fst >> fst)
     |> Seq.map (snd >> snd)
+
+let rec gcd (x : int64) (y : int64) =
+    match (x,y) with
+    | x,y when x = y -> x
+    | x,y when x > y -> gcd (x-y) y
+    | x,y -> gcd x (y-x)
+
+let gcdl x =
+    match x with
+    | [] -> 0L
+    | a::_ -> x |> List.fold gcd a
