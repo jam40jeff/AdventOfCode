@@ -88,5 +88,18 @@ namespace AdventOfCodeInput {
                 return ResourceManager.GetString("Day1", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game 1: 4 green, 2 blue; 1 red, 1 blue, 4 green; 3 green, 4 blue, 1 red; 7 green, 2 blue, 4 red; 3 red, 7 green; 3 red, 3 green
+        ///Game 2: 1 blue, 11 red, 1 green; 3 blue, 2 red, 4 green; 11 red, 2 green, 2 blue; 13 green, 5 red, 1 blue; 4 green, 8 red, 3 blue
+        ///Game 3: 9 red, 2 blue; 4 blue, 2 green, 1 red; 7 red, 4 blue, 3 green; 3 blue, 6 red; 9 blue, 4 red; 3 red
+        ///Game 4: 5 blue, 11 green, 3 red; 6 green, 3 blue, 7 red; 17 blue, 9 green; 1 red, 5 blue, 3 green; 6 red, 7 blue, 4 green
+        ///Game 5: 3 green, 7 bl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Day2 {
+            get {
+                return ResourceManager.GetString("Day2", resourceCulture);
+            }
+        }
     }
 }
