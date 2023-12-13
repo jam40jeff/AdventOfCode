@@ -146,5 +146,15 @@ namespace AdventOfCodeInput {
                 return ResourceManager.GetString("Day5", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time:        61     70     90     66
+        ///Distance:   643   1184   1362   1041.
+        /// </summary>
+        public static string Day6 {
+            get {
+                return ResourceManager.GetString("Day6", resourceCulture);
+            }
+        }
     }
 }

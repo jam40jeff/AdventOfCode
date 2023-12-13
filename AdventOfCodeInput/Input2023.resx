@@ -1657,4 +1657,8 @@ humidity-to-location map:
 1254184202 1194301285 19606964
 1486504318 1775591971 115009557</value>
     </data>
+    <data name="Day6" xml:space="preserve">
+        <value>Time:        61     70     90     66
+Distance:   643   1184   1362   1041</value>
+    </data>
 </root>
