@@ -126,5 +126,25 @@ namespace AdventOfCodeInput {
                 return ResourceManager.GetString("Day4", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to seeds: 1636419363 608824189 3409451394 227471750 12950548 91466703 1003260108 224873703 440703838 191248477 634347552 275264505 3673953799 67839674 2442763622 237071609 3766524590 426344831 1433781343 153722422
+        ///
+        ///seed-to-soil map:
+        ///2067746708 2321931404 124423068
+        ///2774831547 3357841131 95865403
+        ///3776553292 3323317283 34523848
+        ///4167907733 3453706534 116376261
+        ///1190847573 767701596 554806188
+        ///2870696950 1975607604 173919437
+        ///1980384731 2612856575 87361977
+        ///3380570559 2987564153 335753130
+        ///3044616387 24511315 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Day5 {
+            get {
+                return ResourceManager.GetString("Day5", resourceCulture);
+            }
+        }
     }
 }
