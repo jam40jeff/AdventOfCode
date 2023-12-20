@@ -1,5 +1,6 @@
 module AdventOfCodeCommon.Utils
 
+open System
 open Checked
 open System.Collections.Concurrent
 
@@ -80,3 +81,17 @@ let gcdl x =
     match x with
     | [] -> 0L
     | a::_ -> x |> List.fold gcd a
+
+type Ordering = Equal | Greater | Less
+
+let convertComparison = function
+    | v when v > 0 -> Greater
+    | v when v < 0 -> Less
+    | 0 -> Equal
+    | v -> failwith $"Unexpected value: %i{v}"
+
+let convertOrdering = function | Equal -> 0 | Greater -> 1 | Less -> -1
+
+let tryParseInt (s : string) =
+    let ok, n = Int32.TryParse s
+    if ok then Some n else None
